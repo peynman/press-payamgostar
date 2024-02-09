@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:import schemaLocation="IProduct_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:complexType name="ProductInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BuyAble" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CommisionType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Commission" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="GroupId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="Inventory" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="IsActiveOrderPoint" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="IsCommission" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="IsService" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="MadeIn" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MinimumAmount" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PriceListInfo" nillable="true" type="tns:ArrayOfPriceListInfo"/>
+      <xs:element minOccurs="0" name="ProductUnitType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RefId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Sellable" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="Taxable" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="TechInfo" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Tollable" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="UnitBuyPrice" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="UnitPrice" nillable="true" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductInfo" nillable="true" type="tns:ProductInfo"/>
+  <xs:complexType name="ArrayOfPriceListInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceListInfo" nillable="true" type="tns:PriceListInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPriceListInfo" nillable="true" type="tns:ArrayOfPriceListInfo"/>
+  <xs:complexType name="PriceListInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InvoiceType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PriceListProducts" nillable="true" type="tns:ArrayOfPriceListProductInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceListInfo" nillable="true" type="tns:PriceListInfo"/>
+  <xs:complexType name="ArrayOfPriceListProductInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceListProductInfo" nillable="true" type="tns:PriceListProductInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPriceListProductInfo" nillable="true" type="tns:ArrayOfPriceListProductInfo"/>
+  <xs:complexType name="PriceListProductInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PricingType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ProductCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ProductId" nillable="true" type="ser:guid"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceListProductInfo" nillable="true" type="tns:PriceListProductInfo"/>
+  <xs:complexType name="SaveCrmObjectResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CrmId" type="ser:guid"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveCrmObjectResult" nillable="true" type="tns:SaveCrmObjectResult"/>
+  <xs:complexType name="OperationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Success" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResult" nillable="true" type="tns:OperationResult"/>
+  <xs:complexType name="ProductInfoResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProductInfoList" nillable="true" type="tns:ArrayOfProductInfo"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductInfoResult" nillable="true" type="tns:ProductInfoResult"/>
+  <xs:complexType name="ArrayOfProductInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductInfo" nillable="true" type="tns:ProductInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductInfo" nillable="true" type="tns:ArrayOfProductInfo"/>
+  <xs:complexType name="ProductItemInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExpireDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="HistoryItems" nillable="true" type="tns:ArrayOfProductItemHistory"/>
+          <xs:element minOccurs="0" name="InputInventoryTransactionId" nillable="true" type="ser:guid"/>
+          <xs:element minOccurs="0" name="InventoryId" nillable="true" type="ser:guid"/>
+          <xs:element minOccurs="0" name="InventoryName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OutputInventoryTransactionId" nillable="true" type="ser:guid"/>
+          <xs:element minOccurs="0" name="ProductId" type="ser:guid"/>
+          <xs:element minOccurs="0" name="ProductItemInventoryStatus" type="tns:ProductItemInventoryStatus"/>
+          <xs:element minOccurs="0" name="ProductItemStatus" type="tns:ProductItemStatus"/>
+          <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ProductionDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="WarrantyDurationMonths" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="WarrantyEndDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="WarrantyStartDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="WarrantyStartType" type="tns:WarrantyStartType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductItemInfo" nillable="true" type="tns:ProductItemInfo"/>
+  <xs:complexType name="ArrayOfProductItemHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductItemHistory" nillable="true" type="tns:ProductItemHistory"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductItemHistory" nillable="true" type="tns:ArrayOfProductItemHistory"/>
+  <xs:complexType name="ProductItemHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="DestinationInventoryId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="DestinationInventoryName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="InventoryTransactionType" type="tns:InventoryTransactionType"/>
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ReceiverDesc" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ReceiverIdentityId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="ReceiverUserId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ShipperDesc" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipperIdentityId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="ShipperUserId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="SourceInventoryId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="SourceInventoryName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TransactionStatus" type="tns:TransactionStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductItemHistory" nillable="true" type="tns:ProductItemHistory"/>
+  <xs:simpleType name="InventoryTransactionType">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Input"/>
+          <xs:enumeration value="Output"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="InventoryTransactionType" nillable="true" type="tns:InventoryTransactionType"/>
+  <xs:simpleType name="TransactionStatus">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Pending"/>
+          <xs:enumeration value="Approved"/>
+          <xs:enumeration value="Rejected">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Pricing">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Final">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="TransactionStatus" nillable="true" type="tns:TransactionStatus"/>
+  <xs:simpleType name="ProductItemInventoryStatus">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Available"/>
+          <xs:enumeration value="Delivered"/>
+          <xs:enumeration value="PendingEnterToInventory">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PendingExitFromInventory">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PendingDispose">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Disposed">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ProductItemInventoryStatus" nillable="true" type="tns:ProductItemInventoryStatus"/>
+  <xs:simpleType name="ProductItemStatus">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Healthy"/>
+          <xs:enumeration value="Bad"/>
+          <xs:enumeration value="Repair">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Return">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ProductItemStatus" nillable="true" type="tns:ProductItemStatus"/>
+  <xs:simpleType name="WarrantyStartType">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None"/>
+          <xs:enumeration value="ExactlyDate"/>
+          <xs:enumeration value="OnOutputTransaction">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="OnRegister">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ProductVerification">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="WarrantyStartType" nillable="true" type="tns:WarrantyStartType"/>
+  <xs:complexType name="ProductGroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CountFormulaId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ParentGroupId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="RefId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TafsiliCode" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductGroupInfo" nillable="true" type="tns:ProductGroupInfo"/>
+  <xs:complexType name="SaveProductGroupResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProductGroupId" type="ser:guid"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveProductGroupResult" nillable="true" type="tns:SaveProductGroupResult"/>
+  <xs:complexType name="ProductGroupResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProductGroupInfo" nillable="true" type="tns:ProductGroupInfo"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductGroupResult" nillable="true" type="tns:ProductGroupResult"/>
+</xs:schema>

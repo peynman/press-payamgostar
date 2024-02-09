@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="ITicket_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+  <xs:import schemaLocation="ITicket_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:import schemaLocation="ITicket_4.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+  <xs:element name="Saveticket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="ticketInfo" nillable="true" type="q1:TicketInfo" xmlns:q1="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveticketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveticketResult" nillable="true" type="q2:SaveCrmObjectResult" xmlns:q2="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTicket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="typeKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTicketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchTicketResult" nillable="true" type="q3:TicketInfoResult" xmlns:q3="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindTicketById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="ticketId" type="q4:guid" xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindTicketByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindTicketByIdResult" nillable="true" type="q5:TicketInfoResult" xmlns:q5="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTicketById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="ticketId" type="q6:guid" xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/"/>
+        <xs:element minOccurs="0" name="deleteOption" type="q7:CrmObjectDeleteOption" xmlns:q7="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTicketByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTicketByIdResult" nillable="true" type="q8:SaveCrmObjectResult" xmlns:q8="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHistoryByTicketId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="ticketId" type="q9:guid" xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHistoryByTicketIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetHistoryByTicketIdResult" nillable="true" type="q10:TicketInfoHistoryResult" xmlns:q10="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTicketHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="ticketId" type="q11:guid" xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/"/>
+        <xs:element minOccurs="0" name="UserId" type="q12:guid" xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/"/>
+        <xs:element minOccurs="0" name="Content" nillable="true" type="xs:base64Binary"/>
+        <xs:element minOccurs="0" name="Files" nillable="true" type="q13:ArrayOfFileInfo" xmlns:q13="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTicketHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveTicketHistoryResult" nillable="true" type="q14:SaveCrmObjectResult" xmlns:q14="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTicketFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="id" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTicketFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTicketFileResult" nillable="true" type="q15:TicketsHistoryFileResult" xmlns:q15="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:import schemaLocation="IAppointment_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:import schemaLocation="IAppointment_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:complexType name="AppointmentInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GeneralCrmObjectInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AppointmentAttendantsInfo" nillable="true" type="tns:ArrayOfAppointmentAttendantsInfo"/>
+          <xs:element minOccurs="0" name="AppointmentStatus" nillable="true" type="tns:AppointmentStatus"/>
+          <xs:element minOccurs="0" name="AssignedToId" nillable="true" type="ser:guid"/>
+          <xs:element minOccurs="0" name="CalendarId" nillable="true" type="ser:guid"/>
+          <xs:element minOccurs="0" name="CalendarName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="EndDatePersian" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="RoomType" nillable="true" type="tns:AppointmentRoomType"/>
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="StartDatePersian" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AppointmentInfo" nillable="true" type="tns:AppointmentInfo"/>
+  <xs:complexType name="GeneralCrmObjectInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCrmObjectInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IdentityId" nillable="true" type="ser:guid"/>
+          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GeneralCrmObjectInfo" nillable="true" type="tns:GeneralCrmObjectInfo"/>
+  <xs:complexType name="BaseCrmObjectInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="CrmId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="CrmObjectTypeCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CrmObjectTypeId" type="ser:guid"/>
+      <xs:element minOccurs="0" name="CrmObjectTypeIndex" type="xs:int"/>
+      <xs:element minOccurs="0" name="CrmObjectTypeName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ExtendedProperties" nillable="true" type="tns:ArrayOfBaseCrmObjectExtendedPropertyInfo"/>
+      <xs:element minOccurs="0" name="ModifyDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ParentCrmObjectId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="ProcessStateIndex" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="RefId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Stage" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StageId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="Tags" nillable="true" type="q1:ArrayOfstring" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseCrmObjectInfo" nillable="true" type="tns:BaseCrmObjectInfo"/>
+  <xs:complexType name="ArrayOfBaseCrmObjectExtendedPropertyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BaseCrmObjectExtendedPropertyInfo" nillable="true" type="tns:BaseCrmObjectExtendedPropertyInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBaseCrmObjectExtendedPropertyInfo" nillable="true" type="tns:ArrayOfBaseCrmObjectExtendedPropertyInfo"/>
+  <xs:complexType name="BaseCrmObjectExtendedPropertyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UserKey" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseCrmObjectExtendedPropertyInfo" nillable="true" type="tns:BaseCrmObjectExtendedPropertyInfo"/>
+  <xs:complexType name="ArrayOfAppointmentAttendantsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppointmentAttendantsInfo" nillable="true" type="tns:AppointmentAttendantsInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAppointmentAttendantsInfo" nillable="true" type="tns:ArrayOfAppointmentAttendantsInfo"/>
+  <xs:complexType name="AppointmentAttendantsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlertOrganizerOnFeedback" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="AttendantType" type="tns:AttendantType"/>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="GetApprove" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="IdentityId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PresenceIsRequired" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="RefCode" type="xs:long"/>
+      <xs:element minOccurs="0" name="SendPresenceList" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="ser:guid"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AppointmentAttendantsInfo" nillable="true" type="tns:AppointmentAttendantsInfo"/>
+  <xs:simpleType name="AttendantType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Identity">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Email">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Phone">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="User">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AttendantType" nillable="true" type="tns:AttendantType"/>
+  <xs:simpleType name="AppointmentStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pending">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Started">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cancelled">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Blocked">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Archived">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AppointmentStatus" nillable="true" type="tns:AppointmentStatus"/>
+  <xs:simpleType name="AppointmentRoomType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HostRoom">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CustomerRoom">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AppointmentRoomType" nillable="true" type="tns:AppointmentRoomType"/>
+  <xs:complexType name="SaveCrmObjectResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CrmId" type="ser:guid"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveCrmObjectResult" nillable="true" type="tns:SaveCrmObjectResult"/>
+  <xs:complexType name="OperationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Success" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResult" nillable="true" type="tns:OperationResult"/>
+  <xs:complexType name="AppointmentResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AppointmentInfo" nillable="true" type="tns:AppointmentInfo"/>
+          <xs:element minOccurs="0" name="AppointmentInfoList" nillable="true" type="tns:ArrayOfAppointmentInfo"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AppointmentResult" nillable="true" type="tns:AppointmentResult"/>
+  <xs:complexType name="ArrayOfAppointmentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppointmentInfo" nillable="true" type="tns:AppointmentInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAppointmentInfo" nillable="true" type="tns:ArrayOfAppointmentInfo"/>
+</xs:schema>

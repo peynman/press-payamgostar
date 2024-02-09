@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Payment" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="IPayment.xsd" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="IPayment_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="IPayment_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      <xsd:import schemaLocation="IPayment_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xsd:import schemaLocation="IPayment_4.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPayment_SavePayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePayment"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_SavePayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePaymentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_DeletePaymentById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePaymentById"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_DeletePaymentById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePaymentByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_DeletePaymentByNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePaymentByNumber"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_DeletePaymentByNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePaymentByNumberResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_FindPaymentByNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPaymentByNumber"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_FindPaymentByNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPaymentByNumberResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_DeleteReceiptByNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteReceiptByNumber"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_DeleteReceiptByNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteReceiptByNumberResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_FindReceiptByNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindReceiptByNumber"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_FindReceiptByNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindReceiptByNumberResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_SearchPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPayment"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_SearchPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPaymentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_SearchReceipt_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchReceipt"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_SearchReceipt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchReceiptResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_FindPaymentById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPaymentById"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_FindPaymentById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPaymentByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_FindReceiptById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindReceiptById"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_FindReceiptById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindReceiptByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_ApprovedPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApprovedPayment"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_ApprovedPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApprovedPaymentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_RejectedPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:RejectedPayment"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_RejectedPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RejectedPaymentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_PendingPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:PendingPayment"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_PendingPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PendingPaymentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_NumberedPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:NumberedPayment"/>
+  </wsdl:message>
+  <wsdl:message name="IPayment_NumberedPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NumberedPaymentResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IPayment">
+    <wsdl:operation name="SavePayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/SavePayment" message="tns:IPayment_SavePayment_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/SavePaymentResponse" message="tns:IPayment_SavePayment_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePaymentById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/DeletePaymentById" message="tns:IPayment_DeletePaymentById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/DeletePaymentByIdResponse" message="tns:IPayment_DeletePaymentById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePaymentByNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/DeletePaymentByNumber" message="tns:IPayment_DeletePaymentByNumber_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/DeletePaymentByNumberResponse" message="tns:IPayment_DeletePaymentByNumber_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindPaymentByNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/FindPaymentByNumber" message="tns:IPayment_FindPaymentByNumber_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/FindPaymentByNumberResponse" message="tns:IPayment_FindPaymentByNumber_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReceiptByNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/DeleteReceiptByNumber" message="tns:IPayment_DeleteReceiptByNumber_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/DeleteReceiptByNumberResponse" message="tns:IPayment_DeleteReceiptByNumber_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindReceiptByNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/FindReceiptByNumber" message="tns:IPayment_FindReceiptByNumber_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/FindReceiptByNumberResponse" message="tns:IPayment_FindReceiptByNumber_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/SearchPayment" message="tns:IPayment_SearchPayment_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/SearchPaymentResponse" message="tns:IPayment_SearchPayment_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SearchReceipt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/SearchReceipt" message="tns:IPayment_SearchReceipt_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/SearchReceiptResponse" message="tns:IPayment_SearchReceipt_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindPaymentById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/FindPaymentById" message="tns:IPayment_FindPaymentById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/FindPaymentByIdResponse" message="tns:IPayment_FindPaymentById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindReceiptById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/FindReceiptById" message="tns:IPayment_FindReceiptById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/FindReceiptByIdResponse" message="tns:IPayment_FindReceiptById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ApprovedPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/ApprovedPayment" message="tns:IPayment_ApprovedPayment_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/ApprovedPaymentResponse" message="tns:IPayment_ApprovedPayment_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="RejectedPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/RejectedPayment" message="tns:IPayment_RejectedPayment_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/RejectedPaymentResponse" message="tns:IPayment_RejectedPayment_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="PendingPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/PendingPayment" message="tns:IPayment_PendingPayment_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/PendingPaymentResponse" message="tns:IPayment_PendingPayment_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="NumberedPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayment/NumberedPayment" message="tns:IPayment_NumberedPayment_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayment/NumberedPaymentResponse" message="tns:IPayment_NumberedPayment_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPayment" type="tns:IPayment">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SavePayment">
+      <soap:operation soapAction="http://tempuri.org/IPayment/SavePayment" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePaymentById">
+      <soap:operation soapAction="http://tempuri.org/IPayment/DeletePaymentById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePaymentByNumber">
+      <soap:operation soapAction="http://tempuri.org/IPayment/DeletePaymentByNumber" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindPaymentByNumber">
+      <soap:operation soapAction="http://tempuri.org/IPayment/FindPaymentByNumber" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReceiptByNumber">
+      <soap:operation soapAction="http://tempuri.org/IPayment/DeleteReceiptByNumber" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindReceiptByNumber">
+      <soap:operation soapAction="http://tempuri.org/IPayment/FindReceiptByNumber" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPayment">
+      <soap:operation soapAction="http://tempuri.org/IPayment/SearchPayment" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchReceipt">
+      <soap:operation soapAction="http://tempuri.org/IPayment/SearchReceipt" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindPaymentById">
+      <soap:operation soapAction="http://tempuri.org/IPayment/FindPaymentById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindReceiptById">
+      <soap:operation soapAction="http://tempuri.org/IPayment/FindReceiptById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApprovedPayment">
+      <soap:operation soapAction="http://tempuri.org/IPayment/ApprovedPayment" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectedPayment">
+      <soap:operation soapAction="http://tempuri.org/IPayment/RejectedPayment" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PendingPayment">
+      <soap:operation soapAction="http://tempuri.org/IPayment/PendingPayment" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NumberedPayment">
+      <soap:operation soapAction="http://tempuri.org/IPayment/NumberedPayment" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Payment">
+    <wsdl:port name="BasicHttpBinding_IPayment" binding="tns:BasicHttpBinding_IPayment">
+      <soap:address location="http://93.118.123.56/Services/API/IPayment.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

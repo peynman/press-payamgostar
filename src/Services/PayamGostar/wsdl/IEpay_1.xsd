@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:import schemaLocation="IEpay_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:complexType name="PaymentLinkInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ExpireAfterDays" type="xs:short"/>
+      <xs:element minOccurs="0" name="IdentityId" type="ser:guid"/>
+      <xs:element minOccurs="0" name="MobilePhoneNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MoneyAccountUserKey" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PaymentTypeUserKey" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RegisterReceipt" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentLinkInfo" nillable="true" type="tns:PaymentLinkInfo"/>
+  <xs:complexType name="PaymentLinkInfoResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PaymentLink" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentLinkInfoResult" nillable="true" type="tns:PaymentLinkInfoResult"/>
+  <xs:complexType name="OperationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Success" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResult" nillable="true" type="tns:OperationResult"/>
+</xs:schema>

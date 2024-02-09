@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Opportunity" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="IOpportunity.xsd" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="IOpportunity_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="IOpportunity_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      <xsd:import schemaLocation="IOpportunity_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xsd:import schemaLocation="IOpportunity_4.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOpportunity_SearchOpportunity_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchOpportunity"/>
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_SearchOpportunity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchOpportunityResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_FindOpportunityById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindOpportunityById"/>
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_FindOpportunityById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindOpportunityByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_DeleteOpportunityById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOpportunityById"/>
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_DeleteOpportunityById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOpportunityByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_SaveOpportunity_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOpportunity"/>
+  </wsdl:message>
+  <wsdl:message name="IOpportunity_SaveOpportunity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOpportunityResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IOpportunity">
+    <wsdl:operation name="SearchOpportunity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOpportunity/SearchOpportunity" message="tns:IOpportunity_SearchOpportunity_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IOpportunity/SearchOpportunityResponse" message="tns:IOpportunity_SearchOpportunity_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindOpportunityById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOpportunity/FindOpportunityById" message="tns:IOpportunity_FindOpportunityById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IOpportunity/FindOpportunityByIdResponse" message="tns:IOpportunity_FindOpportunityById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOpportunityById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOpportunity/DeleteOpportunityById" message="tns:IOpportunity_DeleteOpportunityById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IOpportunity/DeleteOpportunityByIdResponse" message="tns:IOpportunity_DeleteOpportunityById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOpportunity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOpportunity/SaveOpportunity" message="tns:IOpportunity_SaveOpportunity_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IOpportunity/SaveOpportunityResponse" message="tns:IOpportunity_SaveOpportunity_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IOpportunity" type="tns:IOpportunity">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SearchOpportunity">
+      <soap:operation soapAction="http://tempuri.org/IOpportunity/SearchOpportunity" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindOpportunityById">
+      <soap:operation soapAction="http://tempuri.org/IOpportunity/FindOpportunityById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOpportunityById">
+      <soap:operation soapAction="http://tempuri.org/IOpportunity/DeleteOpportunityById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOpportunity">
+      <soap:operation soapAction="http://tempuri.org/IOpportunity/SaveOpportunity" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Opportunity">
+    <wsdl:port name="BasicHttpBinding_IOpportunity" binding="tns:BasicHttpBinding_IOpportunity">
+      <soap:address location="http://93.118.123.56/Services/API/IOpportunity.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

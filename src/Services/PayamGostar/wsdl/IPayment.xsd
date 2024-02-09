@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="IPayment_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+  <xs:import schemaLocation="IPayment_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:import schemaLocation="IPayment_4.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+  <xs:element name="SavePayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="paymentInfo" nillable="true" type="q1:PaymentInfo" xmlns:q1="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePaymentResult" nillable="true" type="q2:SaveCrmObjectResult" xmlns:q2="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePaymentById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="crmId" type="q3:guid" xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/"/>
+        <xs:element minOccurs="0" name="deleteOption" type="q4:CrmObjectDeleteOption" xmlns:q4="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePaymentByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePaymentByIdResult" nillable="true" type="q5:SaveCrmObjectResult" xmlns:q5="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePaymentByNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="deleteOption" type="q6:CrmObjectDeleteOption" xmlns:q6="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePaymentByNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePaymentByNumberResult" nillable="true" type="q7:SaveCrmObjectResult" xmlns:q7="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPaymentByNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="crmObjectTypeCode" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPaymentByNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindPaymentByNumberResult" nillable="true" type="q8:PaymentInfoResult" xmlns:q8="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteReceiptByNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="deleteOption" type="q9:CrmObjectDeleteOption" xmlns:q9="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteReceiptByNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteReceiptByNumberResult" nillable="true" type="q10:SaveCrmObjectResult" xmlns:q10="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindReceiptByNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="crmObjectTypeCode" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindReceiptByNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindReceiptByNumberResult" nillable="true" type="q11:PaymentInfoResult" xmlns:q11="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="crmObjectTypeCode" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchPaymentResult" nillable="true" type="q12:PaymentInfoResult" xmlns:q12="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchReceipt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="crmObjectTypeCode" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchReceiptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchReceiptResult" nillable="true" type="q13:PaymentInfoResult" xmlns:q13="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPaymentById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="paymentId" type="q14:guid" xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPaymentByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindPaymentByIdResult" nillable="true" type="q15:PaymentInfoResult" xmlns:q15="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindReceiptById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="receiptId" type="q16:guid" xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindReceiptByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindReceiptByIdResult" nillable="true" type="q17:PaymentInfoResult" xmlns:q17="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApprovedPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="paymentId" type="q18:guid" xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApprovedPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApprovedPaymentResult" nillable="true" type="q19:SaveCrmObjectResult" xmlns:q19="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejectedPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="paymentId" type="q20:guid" xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejectedPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RejectedPaymentResult" nillable="true" type="q21:SaveCrmObjectResult" xmlns:q21="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PendingPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="paymentId" type="q22:guid" xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PendingPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PendingPaymentResult" nillable="true" type="q23:SaveCrmObjectResult" xmlns:q23="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NumberedPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="paymentId" type="q24:guid" xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NumberedPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NumberedPaymentResult" nillable="true" type="q25:SaveCrmObjectResult" xmlns:q25="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

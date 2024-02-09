@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Ticket" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="ITicket.xsd" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="ITicket_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="ITicket_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      <xsd:import schemaLocation="ITicket_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xsd:import schemaLocation="ITicket_4.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITicket_Saveticket_InputMessage">
+    <wsdl:part name="parameters" element="tns:Saveticket"/>
+  </wsdl:message>
+  <wsdl:message name="ITicket_Saveticket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveticketResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITicket_SearchTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTicket"/>
+  </wsdl:message>
+  <wsdl:message name="ITicket_SearchTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTicketResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITicket_FindTicketById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindTicketById"/>
+  </wsdl:message>
+  <wsdl:message name="ITicket_FindTicketById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindTicketByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITicket_DeleteTicketById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTicketById"/>
+  </wsdl:message>
+  <wsdl:message name="ITicket_DeleteTicketById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTicketByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITicket_GetHistoryByTicketId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryByTicketId"/>
+  </wsdl:message>
+  <wsdl:message name="ITicket_GetHistoryByTicketId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryByTicketIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITicket_SaveTicketHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTicketHistory"/>
+  </wsdl:message>
+  <wsdl:message name="ITicket_SaveTicketHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTicketHistoryResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITicket_GetTicketFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketFile"/>
+  </wsdl:message>
+  <wsdl:message name="ITicket_GetTicketFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketFileResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ITicket">
+    <wsdl:operation name="Saveticket">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITicket/Saveticket" message="tns:ITicket_Saveticket_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ITicket/SaveticketResponse" message="tns:ITicket_Saveticket_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITicket/SearchTicket" message="tns:ITicket_SearchTicket_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ITicket/SearchTicketResponse" message="tns:ITicket_SearchTicket_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindTicketById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITicket/FindTicketById" message="tns:ITicket_FindTicketById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ITicket/FindTicketByIdResponse" message="tns:ITicket_FindTicketById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTicketById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITicket/DeleteTicketById" message="tns:ITicket_DeleteTicketById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ITicket/DeleteTicketByIdResponse" message="tns:ITicket_DeleteTicketById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryByTicketId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITicket/GetHistoryByTicketId" message="tns:ITicket_GetHistoryByTicketId_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ITicket/GetHistoryByTicketIdResponse" message="tns:ITicket_GetHistoryByTicketId_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTicketHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITicket/SaveTicketHistory" message="tns:ITicket_SaveTicketHistory_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ITicket/SaveTicketHistoryResponse" message="tns:ITicket_SaveTicketHistory_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITicket/GetTicketFile" message="tns:ITicket_GetTicketFile_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ITicket/GetTicketFileResponse" message="tns:ITicket_GetTicketFile_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITicket" type="tns:ITicket">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Saveticket">
+      <soap:operation soapAction="http://tempuri.org/ITicket/Saveticket" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTicket">
+      <soap:operation soapAction="http://tempuri.org/ITicket/SearchTicket" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindTicketById">
+      <soap:operation soapAction="http://tempuri.org/ITicket/FindTicketById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTicketById">
+      <soap:operation soapAction="http://tempuri.org/ITicket/DeleteTicketById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryByTicketId">
+      <soap:operation soapAction="http://tempuri.org/ITicket/GetHistoryByTicketId" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTicketHistory">
+      <soap:operation soapAction="http://tempuri.org/ITicket/SaveTicketHistory" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketFile">
+      <soap:operation soapAction="http://tempuri.org/ITicket/GetTicketFile" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Ticket">
+    <wsdl:port name="BasicHttpBinding_ITicket" binding="tns:BasicHttpBinding_ITicket">
+      <soap:address location="http://93.118.123.56/Services/API/ITicket.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

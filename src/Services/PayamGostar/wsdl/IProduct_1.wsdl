@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Product" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="IProduct.xsd" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="IProduct_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="IProduct_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProduct_SaveProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProduct"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_SaveProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_FindProductByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductByCode"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_FindProductByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductByCodeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_FindProductByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductByName"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_FindProductByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductByNameResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_DeleteProductById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductById"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_DeleteProductById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_GetProductBySerialNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductBySerialNumber"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_GetProductBySerialNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductBySerialNumberResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_DeleteProductByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductByCode"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_DeleteProductByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductByCodeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_FindProductItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductItem"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_FindProductItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductItemResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_SaveProductGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductGroup"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_SaveProductGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductGroupResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_FindProductGroupById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductGroupById"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_FindProductGroupById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductGroupByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_FindProductById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductById"/>
+  </wsdl:message>
+  <wsdl:message name="IProduct_FindProductById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductByIdResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IProduct">
+    <wsdl:operation name="SaveProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct/SaveProduct" message="tns:IProduct_SaveProduct_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct/SaveProductResponse" message="tns:IProduct_SaveProduct_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindProductByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct/FindProductByCode" message="tns:IProduct_FindProductByCode_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct/FindProductByCodeResponse" message="tns:IProduct_FindProductByCode_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindProductByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct/FindProductByName" message="tns:IProduct_FindProductByName_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct/FindProductByNameResponse" message="tns:IProduct_FindProductByName_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct/DeleteProductById" message="tns:IProduct_DeleteProductById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct/DeleteProductByIdResponse" message="tns:IProduct_DeleteProductById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductBySerialNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct/GetProductBySerialNumber" message="tns:IProduct_GetProductBySerialNumber_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct/GetProductBySerialNumberResponse" message="tns:IProduct_GetProductBySerialNumber_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct/DeleteProductByCode" message="tns:IProduct_DeleteProductByCode_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct/DeleteProductByCodeResponse" message="tns:IProduct_DeleteProductByCode_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindProductItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct/FindProductItem" message="tns:IProduct_FindProductItem_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct/FindProductItemResponse" message="tns:IProduct_FindProductItem_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct/SaveProductGroup" message="tns:IProduct_SaveProductGroup_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct/SaveProductGroupResponse" message="tns:IProduct_SaveProductGroup_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindProductGroupById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct/FindProductGroupById" message="tns:IProduct_FindProductGroupById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct/FindProductGroupByIdResponse" message="tns:IProduct_FindProductGroupById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindProductById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProduct/FindProductById" message="tns:IProduct_FindProductById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IProduct/FindProductByIdResponse" message="tns:IProduct_FindProductById_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IProduct" type="tns:IProduct">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SaveProduct">
+      <soap:operation soapAction="http://tempuri.org/IProduct/SaveProduct" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProductByCode">
+      <soap:operation soapAction="http://tempuri.org/IProduct/FindProductByCode" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProductByName">
+      <soap:operation soapAction="http://tempuri.org/IProduct/FindProductByName" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductById">
+      <soap:operation soapAction="http://tempuri.org/IProduct/DeleteProductById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductBySerialNumber">
+      <soap:operation soapAction="http://tempuri.org/IProduct/GetProductBySerialNumber" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductByCode">
+      <soap:operation soapAction="http://tempuri.org/IProduct/DeleteProductByCode" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProductItem">
+      <soap:operation soapAction="http://tempuri.org/IProduct/FindProductItem" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductGroup">
+      <soap:operation soapAction="http://tempuri.org/IProduct/SaveProductGroup" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProductGroupById">
+      <soap:operation soapAction="http://tempuri.org/IProduct/FindProductGroupById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProductById">
+      <soap:operation soapAction="http://tempuri.org/IProduct/FindProductById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Product">
+    <wsdl:port name="BasicHttpBinding_IProduct" binding="tns:BasicHttpBinding_IProduct">
+      <soap:address location="http://93.118.123.56/Services/API/IProduct.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

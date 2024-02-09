@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="IInvoice_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+  <xs:import schemaLocation="IInvoice_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:import schemaLocation="IInvoice_4.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+  <xs:element name="SaveInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="invoiceInfo" nillable="true" type="q1:InvoiceInfo" xmlns:q1="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveInvoiceResult" nillable="true" type="q2:SaveCrmObjectResult" xmlns:q2="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveReturnInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="returnInvoiceInfo" nillable="true" type="q3:ReturnInvoiceInfo" xmlns:q3="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveReturnInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveReturnInvoiceResult" nillable="true" type="q4:SaveCrmObjectResult" xmlns:q4="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindInvoiceById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="invoiceId" type="q5:guid" xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindInvoiceByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindInvoiceByIdResult" nillable="true" type="q6:InvoiceInfoResult" xmlns:q6="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPurchaseInvoiceById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="purchInvoiceId" type="q7:guid" xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPurchaseInvoiceByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindPurchaseInvoiceByIdResult" nillable="true" type="q8:InvoiceInfoResult" xmlns:q8="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindReturnPurchaseInvoiceById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="retPurchInvoiceId" type="q9:guid" xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindReturnPurchaseInvoiceByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindReturnPurchaseInvoiceByIdResult" nillable="true" type="q10:InvoiceInfoResult" xmlns:q10="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindQuoteById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="quoteId" type="q11:guid" xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindQuoteByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindQuoteByIdResult" nillable="true" type="q12:InvoiceInfoResult" xmlns:q12="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPurchaseQuoteById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="purchaseQuoteId" type="q13:guid" xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPurchaseQuoteByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindPurchaseQuoteByIdResult" nillable="true" type="q14:InvoiceInfoResult" xmlns:q14="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindReturnInvoiceById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="retInvoiceId" type="q15:guid" xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindReturnInvoiceByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindReturnInvoiceByIdResult" nillable="true" type="q16:InvoiceInfoResult" xmlns:q16="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindInvoiceByNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="invoiceType" type="q17:Gp_InvoiceType" xmlns:q17="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+        <xs:element minOccurs="0" name="typeCode" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindInvoiceByNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindInvoiceByNumberResult" nillable="true" type="q18:InvoiceInfoResult" xmlns:q18="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindReturnInvoiceByNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="typeCode" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindReturnInvoiceByNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindReturnInvoiceByNumberResult" nillable="true" type="q19:InvoiceInfoResult" xmlns:q19="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInvoiceById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="invoiceId" type="q20:guid" xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/"/>
+        <xs:element minOccurs="0" name="deleteOption" type="q21:CrmObjectDeleteOption" xmlns:q21="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInvoiceByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteInvoiceByIdResult" nillable="true" type="q22:SaveCrmObjectResult" xmlns:q22="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInvoiceByNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="invoiceType" type="q23:Gp_InvoiceType" xmlns:q23="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+        <xs:element minOccurs="0" name="typeCode" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="deleteOption" type="q24:CrmObjectDeleteOption" xmlns:q24="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInvoiceByNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteInvoiceByNumberResult" nillable="true" type="q25:InvoiceInfoResult" xmlns:q25="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteReturnInvoiceByNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="typeCode" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="deleteOption" type="q26:CrmObjectDeleteOption" xmlns:q26="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteReturnInvoiceByNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteReturnInvoiceByNumberResult" nillable="true" type="q27:InvoiceInfoResult" xmlns:q27="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="typeKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchInvoiceResult" nillable="true" type="q28:InvoiceInfoResult" xmlns:q28="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchQuote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="typeKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchQuoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchQuoteResult" nillable="true" type="q29:InvoiceInfoResult" xmlns:q29="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPurchaseInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="typeKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPurchaseInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchPurchaseInvoiceResult" nillable="true" type="q30:InvoiceInfoResult" xmlns:q30="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchReturnPurchaseInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="typeKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchReturnPurchaseInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchReturnPurchaseInvoiceResult" nillable="true" type="q31:InvoiceInfoResult" xmlns:q31="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchReturnSaleInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="typeKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchReturnSaleInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchReturnSaleInvoiceResult" nillable="true" type="q32:InvoiceInfoResult" xmlns:q32="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPurchaseQuote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="typeKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPurchaseQuoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchPurchaseQuoteResult" nillable="true" type="q33:InvoiceInfoResult" xmlns:q33="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoicesByIdentityId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="identityId" type="q34:guid" xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoicesByIdentityIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetInvoicesByIdentityIdResult" nillable="true" type="q35:InvoiceInfoResult" xmlns:q35="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Approved">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="invoiceId" type="q36:guid" xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApprovedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApprovedResult" nillable="true" type="q37:SaveCrmObjectResult" xmlns:q37="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rejected">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="invoiceId" type="q38:guid" xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejectedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RejectedResult" nillable="true" type="q39:SaveCrmObjectResult" xmlns:q39="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Pending">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="invoiceId" type="q40:guid" xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PendingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PendingResult" nillable="true" type="q41:SaveCrmObjectResult" xmlns:q41="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Numbered">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="invoiceId" type="q42:guid" xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NumberedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NumberedResult" nillable="true" type="q43:SaveCrmObjectResult" xmlns:q43="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:import schemaLocation="IPriceList_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:complexType name="PriceListInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InvoiceType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PriceListProducts" nillable="true" type="tns:ArrayOfPriceListProductInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceListInfo" nillable="true" type="tns:PriceListInfo"/>
+  <xs:complexType name="ArrayOfPriceListProductInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceListProductInfo" nillable="true" type="tns:PriceListProductInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPriceListProductInfo" nillable="true" type="tns:ArrayOfPriceListProductInfo"/>
+  <xs:complexType name="PriceListProductInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PricingType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ProductCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ProductId" nillable="true" type="ser:guid"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceListProductInfo" nillable="true" type="tns:PriceListProductInfo"/>
+  <xs:complexType name="PriceListSaveResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SavedPriceListId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="Success" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceListSaveResult" nillable="true" type="tns:PriceListSaveResult"/>
+</xs:schema>

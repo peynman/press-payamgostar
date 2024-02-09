@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Task" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="ITask.xsd" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="ITask_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="ITask_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      <xsd:import schemaLocation="ITask_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xsd:import schemaLocation="ITask_4.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITask_SaveTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTask"/>
+  </wsdl:message>
+  <wsdl:message name="ITask_SaveTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTaskResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITask_SearchTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTask"/>
+  </wsdl:message>
+  <wsdl:message name="ITask_SearchTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTaskResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITask_FindTaskById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindTaskById"/>
+  </wsdl:message>
+  <wsdl:message name="ITask_FindTaskById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindTaskByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ITask_DeleteTaskById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTaskById"/>
+  </wsdl:message>
+  <wsdl:message name="ITask_DeleteTaskById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTaskByIdResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ITask">
+    <wsdl:operation name="SaveTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITask/SaveTask" message="tns:ITask_SaveTask_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ITask/SaveTaskResponse" message="tns:ITask_SaveTask_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITask/SearchTask" message="tns:ITask_SearchTask_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ITask/SearchTaskResponse" message="tns:ITask_SearchTask_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindTaskById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITask/FindTaskById" message="tns:ITask_FindTaskById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ITask/FindTaskByIdResponse" message="tns:ITask_FindTaskById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTaskById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITask/DeleteTaskById" message="tns:ITask_DeleteTaskById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ITask/DeleteTaskByIdResponse" message="tns:ITask_DeleteTaskById_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITask" type="tns:ITask">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SaveTask">
+      <soap:operation soapAction="http://tempuri.org/ITask/SaveTask" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTask">
+      <soap:operation soapAction="http://tempuri.org/ITask/SearchTask" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindTaskById">
+      <soap:operation soapAction="http://tempuri.org/ITask/FindTaskById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTaskById">
+      <soap:operation soapAction="http://tempuri.org/ITask/DeleteTaskById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Task">
+    <wsdl:port name="BasicHttpBinding_ITask" binding="tns:BasicHttpBinding_ITask">
+      <soap:address location="http://93.118.123.56/Services/API/ITask.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

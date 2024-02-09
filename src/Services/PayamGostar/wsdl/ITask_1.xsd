@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:import schemaLocation="ITask_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:import schemaLocation="ITask_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:complexType name="TaskInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GeneralCrmObjectInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssignedUserToTask" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="DueDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="PercentCompleted" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="TaskStatus" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskInfo" nillable="true" type="tns:TaskInfo"/>
+  <xs:complexType name="GeneralCrmObjectInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCrmObjectInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IdentityId" nillable="true" type="ser:guid"/>
+          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GeneralCrmObjectInfo" nillable="true" type="tns:GeneralCrmObjectInfo"/>
+  <xs:complexType name="BaseCrmObjectInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="CrmId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="CrmObjectTypeCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CrmObjectTypeId" type="ser:guid"/>
+      <xs:element minOccurs="0" name="CrmObjectTypeIndex" type="xs:int"/>
+      <xs:element minOccurs="0" name="CrmObjectTypeName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ExtendedProperties" nillable="true" type="tns:ArrayOfBaseCrmObjectExtendedPropertyInfo"/>
+      <xs:element minOccurs="0" name="ModifyDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ParentCrmObjectId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="ProcessStateIndex" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="RefId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Stage" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StageId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="Tags" nillable="true" type="q1:ArrayOfstring" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseCrmObjectInfo" nillable="true" type="tns:BaseCrmObjectInfo"/>
+  <xs:complexType name="ArrayOfBaseCrmObjectExtendedPropertyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BaseCrmObjectExtendedPropertyInfo" nillable="true" type="tns:BaseCrmObjectExtendedPropertyInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBaseCrmObjectExtendedPropertyInfo" nillable="true" type="tns:ArrayOfBaseCrmObjectExtendedPropertyInfo"/>
+  <xs:complexType name="BaseCrmObjectExtendedPropertyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UserKey" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseCrmObjectExtendedPropertyInfo" nillable="true" type="tns:BaseCrmObjectExtendedPropertyInfo"/>
+  <xs:complexType name="SaveCrmObjectResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CrmId" type="ser:guid"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveCrmObjectResult" nillable="true" type="tns:SaveCrmObjectResult"/>
+  <xs:complexType name="OperationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Success" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResult" nillable="true" type="tns:OperationResult"/>
+  <xs:complexType name="TaskInfoResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TaskInfo" nillable="true" type="tns:TaskInfo"/>
+          <xs:element minOccurs="0" name="TaskInfoList" nillable="true" type="tns:ArrayOfTaskInfo"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskInfoResult" nillable="true" type="tns:TaskInfoResult"/>
+  <xs:complexType name="ArrayOfTaskInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskInfo" nillable="true" type="tns:TaskInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskInfo" nillable="true" type="tns:ArrayOfTaskInfo"/>
+</xs:schema>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="ITask_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+  <xs:import schemaLocation="ITask_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:import schemaLocation="ITask_4.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+  <xs:element name="SaveTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="taskInfo" nillable="true" type="q1:TaskInfo" xmlns:q1="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveTaskResult" nillable="true" type="q2:SaveCrmObjectResult" xmlns:q2="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="typeKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchTaskResult" nillable="true" type="q3:TaskInfoResult" xmlns:q3="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindTaskById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="taskId" type="q4:guid" xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindTaskByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindTaskByIdResult" nillable="true" type="q5:TaskInfoResult" xmlns:q5="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTaskById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="TaskId" type="q6:guid" xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/"/>
+        <xs:element minOccurs="0" name="deleteOption" type="q7:CrmObjectDeleteOption" xmlns:q7="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTaskByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTaskByIdResult" nillable="true" type="q8:SaveCrmObjectResult" xmlns:q8="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

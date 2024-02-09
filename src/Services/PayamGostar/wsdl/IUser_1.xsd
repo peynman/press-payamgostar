@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:import schemaLocation="IUser_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:import schemaLocation="IUser_3.xsd" namespace="http://schemas.datacontract.org/2004/07/SeptaNSFCore.MediaProxy"/>
+  <xs:complexType name="UserInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="ser:guid"/>
+          <xs:element minOccurs="0" name="IdentityId" nillable="true" type="ser:guid"/>
+          <xs:element minOccurs="0" name="Lines" nillable="true" type="tns:ArrayOfLineInfo"/>
+          <xs:element minOccurs="0" name="NickName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TelephonyPassword" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserGroups" nillable="true" type="tns:ArrayOfUserGroupInfo"/>
+          <xs:element minOccurs="0" name="UserKey" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserType" nillable="true" type="tns:UserType"/>
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserInfo" nillable="true" type="tns:UserInfo"/>
+  <xs:complexType name="OperationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Success" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResult" nillable="true" type="tns:OperationResult"/>
+  <xs:complexType name="ArrayOfLineInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LineInfo" nillable="true" type="tns:LineInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLineInfo" nillable="true" type="tns:ArrayOfLineInfo"/>
+  <xs:complexType name="LineInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanReceive" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="CanSend" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="Id" type="ser:guid"/>
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="IsOnline" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="MediaType" type="q1:MediaType" xmlns:q1="http://schemas.datacontract.org/2004/07/SeptaNSFCore.MediaProxy"/>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineInfo" nillable="true" type="tns:LineInfo"/>
+  <xs:complexType name="ArrayOfUserGroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserGroupInfo" nillable="true" type="tns:UserGroupInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserGroupInfo" nillable="true" type="tns:ArrayOfUserGroupInfo"/>
+  <xs:complexType name="UserGroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Id" type="ser:guid"/>
+      <xs:element minOccurs="0" name="UserKey" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserGroupInfo" nillable="true" type="tns:UserGroupInfo"/>
+  <xs:simpleType name="UserType">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Operator"/>
+          <xs:enumeration value="Supplier"/>
+          <xs:enumeration value="Customer">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Agent">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Competitor">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="UserType" nillable="true" type="tns:UserType"/>
+  <xs:complexType name="UserTelephonySystemInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TelephonySystems" nillable="true" type="tns:ArrayOfTelephonySystemInfo"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserTelephonySystemInfo" nillable="true" type="tns:UserTelephonySystemInfo"/>
+  <xs:complexType name="ArrayOfTelephonySystemInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TelephonySystemInfo" nillable="true" type="tns:TelephonySystemInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTelephonySystemInfo" nillable="true" type="tns:ArrayOfTelephonySystemInfo"/>
+  <xs:complexType name="TelephonySystemInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrevityName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Extensions" nillable="true" type="tns:ArrayOfTelephonySystemExtensionInfo"/>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="OfficeId" type="ser:guid"/>
+      <xs:element minOccurs="0" name="ServerAddress" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TelephonySystemInfo" nillable="true" type="tns:TelephonySystemInfo"/>
+  <xs:complexType name="ArrayOfTelephonySystemExtensionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TelephonySystemExtensionInfo" nillable="true" type="tns:TelephonySystemExtensionInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTelephonySystemExtensionInfo" nillable="true" type="tns:ArrayOfTelephonySystemExtensionInfo"/>
+  <xs:complexType name="TelephonySystemExtensionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid"/>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TelephonySystemId" type="ser:guid"/>
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TelephonySystemExtensionInfo" nillable="true" type="tns:TelephonySystemExtensionInfo"/>
+  <xs:complexType name="UserHelperExtensionInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HelperExtension" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserHelperExtensionInfo" nillable="true" type="tns:UserHelperExtensionInfo"/>
+  <xs:complexType name="UserInfoResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Users" nillable="true" type="tns:ArrayOfUserInfoItem"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserInfoResult" nillable="true" type="tns:UserInfoResult"/>
+  <xs:complexType name="ArrayOfUserInfoItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserInfoItem" nillable="true" type="tns:UserInfoItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserInfoItem" nillable="true" type="tns:ArrayOfUserInfoItem"/>
+  <xs:complexType name="UserInfoItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Id" type="ser:guid"/>
+      <xs:element minOccurs="0" name="IdentityId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="NickName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TelephonyPassword" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UserKey" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UserType" nillable="true" type="tns:UserType"/>
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInfoItem" nillable="true" type="tns:UserInfoItem"/>
+</xs:schema>

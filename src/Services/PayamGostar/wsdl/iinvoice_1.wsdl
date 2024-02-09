@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Invoice" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="IInvoice.xsd" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="IInvoice_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="IInvoice_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      <xsd:import schemaLocation="IInvoice_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xsd:import schemaLocation="IInvoice_4.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.Domain.Model"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IInvoice_SaveInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveInvoice"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SaveInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveInvoiceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SaveReturnInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveReturnInvoice"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SaveReturnInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveReturnInvoiceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindInvoiceById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindInvoiceById"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindInvoiceById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindInvoiceByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindPurchaseInvoiceById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPurchaseInvoiceById"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindPurchaseInvoiceById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPurchaseInvoiceByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindReturnPurchaseInvoiceById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindReturnPurchaseInvoiceById"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindReturnPurchaseInvoiceById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindReturnPurchaseInvoiceByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindQuoteById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindQuoteById"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindQuoteById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindQuoteByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindPurchaseQuoteById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPurchaseQuoteById"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindPurchaseQuoteById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPurchaseQuoteByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindReturnInvoiceById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindReturnInvoiceById"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindReturnInvoiceById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindReturnInvoiceByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindInvoiceByNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindInvoiceByNumber"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindInvoiceByNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindInvoiceByNumberResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindReturnInvoiceByNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindReturnInvoiceByNumber"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_FindReturnInvoiceByNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindReturnInvoiceByNumberResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteInvoiceById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInvoiceById"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteInvoiceById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInvoiceByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteInvoiceByNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInvoiceByNumber"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteInvoiceByNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInvoiceByNumberResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteReturnInvoiceByNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteReturnInvoiceByNumber"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteReturnInvoiceByNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteReturnInvoiceByNumberResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SearchInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchInvoice"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SearchInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchInvoiceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SearchQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchQuote"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SearchQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchQuoteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SearchPurchaseInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPurchaseInvoice"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SearchPurchaseInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPurchaseInvoiceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SearchReturnPurchaseInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchReturnPurchaseInvoice"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SearchReturnPurchaseInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchReturnPurchaseInvoiceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SearchReturnSaleInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchReturnSaleInvoice"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SearchReturnSaleInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchReturnSaleInvoiceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SearchPurchaseQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPurchaseQuote"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_SearchPurchaseQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPurchaseQuoteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_GetInvoicesByIdentityId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoicesByIdentityId"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_GetInvoicesByIdentityId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoicesByIdentityIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Approved_InputMessage">
+    <wsdl:part name="parameters" element="tns:Approved"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Approved_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApprovedResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Rejected_InputMessage">
+    <wsdl:part name="parameters" element="tns:Rejected"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Rejected_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RejectedResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Pending_InputMessage">
+    <wsdl:part name="parameters" element="tns:Pending"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Pending_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PendingResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Numbered_InputMessage">
+    <wsdl:part name="parameters" element="tns:Numbered"/>
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Numbered_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NumberedResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IInvoice">
+    <wsdl:operation name="SaveInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/SaveInvoice" message="tns:IInvoice_SaveInvoice_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/SaveInvoiceResponse" message="tns:IInvoice_SaveInvoice_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReturnInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/SaveReturnInvoice" message="tns:IInvoice_SaveReturnInvoice_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/SaveReturnInvoiceResponse" message="tns:IInvoice_SaveReturnInvoice_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindInvoiceById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/FindInvoiceById" message="tns:IInvoice_FindInvoiceById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/FindInvoiceByIdResponse" message="tns:IInvoice_FindInvoiceById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindPurchaseInvoiceById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/FindPurchaseInvoiceById" message="tns:IInvoice_FindPurchaseInvoiceById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/FindPurchaseInvoiceByIdResponse" message="tns:IInvoice_FindPurchaseInvoiceById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindReturnPurchaseInvoiceById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/FindReturnPurchaseInvoiceById" message="tns:IInvoice_FindReturnPurchaseInvoiceById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/FindReturnPurchaseInvoiceByIdResponse" message="tns:IInvoice_FindReturnPurchaseInvoiceById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindQuoteById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/FindQuoteById" message="tns:IInvoice_FindQuoteById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/FindQuoteByIdResponse" message="tns:IInvoice_FindQuoteById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindPurchaseQuoteById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/FindPurchaseQuoteById" message="tns:IInvoice_FindPurchaseQuoteById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/FindPurchaseQuoteByIdResponse" message="tns:IInvoice_FindPurchaseQuoteById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindReturnInvoiceById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/FindReturnInvoiceById" message="tns:IInvoice_FindReturnInvoiceById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/FindReturnInvoiceByIdResponse" message="tns:IInvoice_FindReturnInvoiceById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindInvoiceByNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/FindInvoiceByNumber" message="tns:IInvoice_FindInvoiceByNumber_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/FindInvoiceByNumberResponse" message="tns:IInvoice_FindInvoiceByNumber_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindReturnInvoiceByNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/FindReturnInvoiceByNumber" message="tns:IInvoice_FindReturnInvoiceByNumber_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/FindReturnInvoiceByNumberResponse" message="tns:IInvoice_FindReturnInvoiceByNumber_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvoiceById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/DeleteInvoiceById" message="tns:IInvoice_DeleteInvoiceById_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/DeleteInvoiceByIdResponse" message="tns:IInvoice_DeleteInvoiceById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvoiceByNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/DeleteInvoiceByNumber" message="tns:IInvoice_DeleteInvoiceByNumber_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/DeleteInvoiceByNumberResponse" message="tns:IInvoice_DeleteInvoiceByNumber_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReturnInvoiceByNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/DeleteReturnInvoiceByNumber" message="tns:IInvoice_DeleteReturnInvoiceByNumber_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/DeleteReturnInvoiceByNumberResponse" message="tns:IInvoice_DeleteReturnInvoiceByNumber_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SearchInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/SearchInvoice" message="tns:IInvoice_SearchInvoice_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/SearchInvoiceResponse" message="tns:IInvoice_SearchInvoice_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SearchQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/SearchQuote" message="tns:IInvoice_SearchQuote_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/SearchQuoteResponse" message="tns:IInvoice_SearchQuote_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPurchaseInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/SearchPurchaseInvoice" message="tns:IInvoice_SearchPurchaseInvoice_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/SearchPurchaseInvoiceResponse" message="tns:IInvoice_SearchPurchaseInvoice_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SearchReturnPurchaseInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/SearchReturnPurchaseInvoice" message="tns:IInvoice_SearchReturnPurchaseInvoice_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/SearchReturnPurchaseInvoiceResponse" message="tns:IInvoice_SearchReturnPurchaseInvoice_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SearchReturnSaleInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/SearchReturnSaleInvoice" message="tns:IInvoice_SearchReturnSaleInvoice_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/SearchReturnSaleInvoiceResponse" message="tns:IInvoice_SearchReturnSaleInvoice_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPurchaseQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/SearchPurchaseQuote" message="tns:IInvoice_SearchPurchaseQuote_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/SearchPurchaseQuoteResponse" message="tns:IInvoice_SearchPurchaseQuote_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicesByIdentityId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/GetInvoicesByIdentityId" message="tns:IInvoice_GetInvoicesByIdentityId_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/GetInvoicesByIdentityIdResponse" message="tns:IInvoice_GetInvoicesByIdentityId_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Approved">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/Approved" message="tns:IInvoice_Approved_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/ApprovedResponse" message="tns:IInvoice_Approved_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Rejected">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/Rejected" message="tns:IInvoice_Rejected_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/RejectedResponse" message="tns:IInvoice_Rejected_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Pending">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/Pending" message="tns:IInvoice_Pending_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/PendingResponse" message="tns:IInvoice_Pending_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Numbered">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/Numbered" message="tns:IInvoice_Numbered_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/NumberedResponse" message="tns:IInvoice_Numbered_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IInvoice" type="tns:IInvoice">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SaveInvoice">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/SaveInvoice" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReturnInvoice">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/SaveReturnInvoice" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindInvoiceById">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/FindInvoiceById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindPurchaseInvoiceById">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/FindPurchaseInvoiceById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindReturnPurchaseInvoiceById">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/FindReturnPurchaseInvoiceById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindQuoteById">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/FindQuoteById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindPurchaseQuoteById">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/FindPurchaseQuoteById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindReturnInvoiceById">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/FindReturnInvoiceById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindInvoiceByNumber">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/FindInvoiceByNumber" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindReturnInvoiceByNumber">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/FindReturnInvoiceByNumber" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvoiceById">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/DeleteInvoiceById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvoiceByNumber">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/DeleteInvoiceByNumber" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReturnInvoiceByNumber">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/DeleteReturnInvoiceByNumber" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchInvoice">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/SearchInvoice" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchQuote">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/SearchQuote" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPurchaseInvoice">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/SearchPurchaseInvoice" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchReturnPurchaseInvoice">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/SearchReturnPurchaseInvoice" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchReturnSaleInvoice">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/SearchReturnSaleInvoice" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPurchaseQuote">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/SearchPurchaseQuote" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicesByIdentityId">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/GetInvoicesByIdentityId" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Approved">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/Approved" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Rejected">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/Rejected" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pending">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/Pending" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Numbered">
+      <soap:operation soapAction="http://tempuri.org/IInvoice/Numbered" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Invoice">
+    <wsdl:port name="BasicHttpBinding_IInvoice" binding="tns:BasicHttpBinding_IInvoice">
+      <soap:address location="http://93.118.123.56/Services/API/IInvoice.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

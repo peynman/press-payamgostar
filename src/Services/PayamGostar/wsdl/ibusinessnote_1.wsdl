@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="BusinessNote" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="IBusinessNote.xsd" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="IBusinessNote_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="IBusinessNote_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts"/>
+      <xsd:import schemaLocation="IBusinessNote_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBusinessNote_SaveBusinessNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBusinessNote"/>
+  </wsdl:message>
+  <wsdl:message name="IBusinessNote_SaveBusinessNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBusinessNoteResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IBusinessNote_GetBusinessNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessNote"/>
+  </wsdl:message>
+  <wsdl:message name="IBusinessNote_GetBusinessNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessNoteResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IBusinessNote">
+    <wsdl:operation name="SaveBusinessNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessNote/SaveBusinessNote" message="tns:IBusinessNote_SaveBusinessNote_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessNote/SaveBusinessNoteResponse" message="tns:IBusinessNote_SaveBusinessNote_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBusinessNote/GetBusinessNote" message="tns:IBusinessNote_GetBusinessNote_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IBusinessNote/GetBusinessNoteResponse" message="tns:IBusinessNote_GetBusinessNote_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBusinessNote" type="tns:IBusinessNote">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SaveBusinessNote">
+      <soap:operation soapAction="http://tempuri.org/IBusinessNote/SaveBusinessNote" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessNote">
+      <soap:operation soapAction="http://tempuri.org/IBusinessNote/GetBusinessNote" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BusinessNote">
+    <wsdl:port name="BasicHttpBinding_IBusinessNote" binding="tns:BasicHttpBinding_IBusinessNote">
+      <soap:address location="http://93.118.123.56/Services/API/IBusinessNote.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Septa.PayamGostar.ServiceLayer.Contract.PGContracts.DataContracts" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:import schemaLocation="ITicket_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:import schemaLocation="ITicket_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:complexType name="TicketInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GeneralCrmObjectInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActiveProcessLifePaths" nillable="true" type="tns:ArrayOfActiveProcessLifePathInfo"/>
+          <xs:element minOccurs="0" name="AssignedTo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Impact" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Number" type="xs:int"/>
+          <xs:element minOccurs="0" name="ResponseStatus" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Severity" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TicketInfo" nillable="true" type="tns:TicketInfo"/>
+  <xs:complexType name="GeneralCrmObjectInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCrmObjectInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IdentityId" nillable="true" type="ser:guid"/>
+          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GeneralCrmObjectInfo" nillable="true" type="tns:GeneralCrmObjectInfo"/>
+  <xs:complexType name="BaseCrmObjectInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="CrmId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="CrmObjectTypeCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CrmObjectTypeId" type="ser:guid"/>
+      <xs:element minOccurs="0" name="CrmObjectTypeIndex" type="xs:int"/>
+      <xs:element minOccurs="0" name="CrmObjectTypeName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ExtendedProperties" nillable="true" type="tns:ArrayOfBaseCrmObjectExtendedPropertyInfo"/>
+      <xs:element minOccurs="0" name="ModifyDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ParentCrmObjectId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="ProcessStateIndex" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="RefId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Stage" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StageId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="Tags" nillable="true" type="q1:ArrayOfstring" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseCrmObjectInfo" nillable="true" type="tns:BaseCrmObjectInfo"/>
+  <xs:complexType name="ArrayOfBaseCrmObjectExtendedPropertyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BaseCrmObjectExtendedPropertyInfo" nillable="true" type="tns:BaseCrmObjectExtendedPropertyInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBaseCrmObjectExtendedPropertyInfo" nillable="true" type="tns:ArrayOfBaseCrmObjectExtendedPropertyInfo"/>
+  <xs:complexType name="BaseCrmObjectExtendedPropertyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UserKey" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseCrmObjectExtendedPropertyInfo" nillable="true" type="tns:BaseCrmObjectExtendedPropertyInfo"/>
+  <xs:complexType name="ArrayOfActiveProcessLifePathInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActiveProcessLifePathInfo" nillable="true" type="tns:ActiveProcessLifePathInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActiveProcessLifePathInfo" nillable="true" type="tns:ArrayOfActiveProcessLifePathInfo"/>
+  <xs:complexType name="ActiveProcessLifePathInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid"/>
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActiveProcessLifePathInfo" nillable="true" type="tns:ActiveProcessLifePathInfo"/>
+  <xs:complexType name="SaveCrmObjectResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CrmId" type="ser:guid"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveCrmObjectResult" nillable="true" type="tns:SaveCrmObjectResult"/>
+  <xs:complexType name="OperationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Success" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResult" nillable="true" type="tns:OperationResult"/>
+  <xs:complexType name="TicketInfoResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SaveCrmObjectResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TicketInfo" nillable="true" type="tns:TicketInfo"/>
+          <xs:element minOccurs="0" name="TicketInfoList" nillable="true" type="tns:ArrayOfTicketInfo"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TicketInfoResult" nillable="true" type="tns:TicketInfoResult"/>
+  <xs:complexType name="ArrayOfTicketInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TicketInfo" nillable="true" type="tns:TicketInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTicketInfo" nillable="true" type="tns:ArrayOfTicketInfo"/>
+  <xs:complexType name="TicketInfoHistoryResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SaveCrmObjectResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TicketHistory" nillable="true" type="tns:ArrayOfTicketInfoHistory"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TicketInfoHistoryResult" nillable="true" type="tns:TicketInfoHistoryResult"/>
+  <xs:complexType name="ArrayOfTicketInfoHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TicketInfoHistory" nillable="true" type="tns:TicketInfoHistory"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTicketInfoHistory" nillable="true" type="tns:ArrayOfTicketInfoHistory"/>
+  <xs:complexType name="TicketInfoHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:base64Binary"/>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FileInfo" nillable="true" type="tns:ArrayOfFileInfo"/>
+      <xs:element minOccurs="0" name="FromSrc" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MessageType" type="xs:int"/>
+      <xs:element minOccurs="0" name="SenderName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Time" nillable="true" type="ser:duration"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TicketInfoHistory" nillable="true" type="tns:TicketInfoHistory"/>
+  <xs:complexType name="ArrayOfFileInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FileInfo" nillable="true" type="tns:FileInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFileInfo" nillable="true" type="tns:ArrayOfFileInfo"/>
+  <xs:complexType name="FileInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:base64Binary"/>
+      <xs:element minOccurs="0" name="Id" type="xs:long"/>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileInfo" nillable="true" type="tns:FileInfo"/>
+  <xs:complexType name="TicketsHistoryFileResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SaveCrmObjectResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Fileinfo" nillable="true" type="tns:FileInfo"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TicketsHistoryFileResult" nillable="true" type="tns:TicketsHistoryFileResult"/>
+</xs:schema>
