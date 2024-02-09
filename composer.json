@@ -29,6 +29,7 @@
   },
   "require": {
     "php": "^7|^8",
+    "wsdltophp/packagegenerator": "^4.1",
     "laravel/framework": "^8|^9|^10"
   },
   "require-dev": {
